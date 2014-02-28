@@ -87,6 +87,7 @@ var Board = {
    } else if ((flatBoard[2] === flatBoard[4]) && (flatBoard[4] === flatBoard [6]) && (flatBoard[2] !== 0)) {
         return true;  
    }
+
     return false;
     },
 
@@ -112,97 +113,14 @@ $(document).ready(function() {
         $("#" + this.id).text("O");
       }
       currentGame.move(this.id);
+      $("#player1").text("Player1's Score:" + parseInt(currentGame.player1.score));
+      $("#player2").text("Player2's Score:" + parseInt(currentGame.player2.score));
     }
   });
 
-  /*$("button#00").click(function() {
-      if (currentGame.currBoard.board[0][0] === 0) {
-        if (currentGame.currentPlayer === 1) {
-          $("#00").text("X");
-        } else {
-          $("#00").text("O");
-        }
-       currentGame.move("00");
-     };
-  });
-
-  $("button#01").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#01").text("X");
-     } else {
-       $("#01").text("O");
-     }
-     currentGame.move("01");
-  });
-
-  $("button#02").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#02").text("X");
-     } else {
-       $("#02").text("O");
-     }
-     currentGame.move("02");
-  });
-
-  $("button#10").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#10").text("X");
-     } else {
-       $("#10").text("O");
-     }
-     currentGame.move("10");
-  });
-
-  $("button#11").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#11").text("X");
-     } else {
-       $("#11").text("O");
-     }
-     currentGame.move("11");
-  });
-
-  $("button#12").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#12").text("X");
-     } else {
-       $("#12").text("O");
-     }
-     currentGame.move("12");
-  });
-
-  $("button#20").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#20").text("X");
-     } else {
-       $("#20").text("O");
-     }
-     currentGame.move("20");
-  });
-
-  $("button#21").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#21").text("X");
-     } else {
-       $("#21").text("O");
-     }
-  
-    currentGame.move("21");
-
-  });
-
-
-  $("button#22").click(function() {
-     if (currentGame.currentPlayer === 1) {
-       $("#22").text("X");
-     } else {
-       $("#22").text("O");
-     }
-     currentGame.move("22");
-  });
-*/
   $("button#reset").click(function() {
     $(".board button").empty();
     currentGame.newGame();
   });
+
 });
