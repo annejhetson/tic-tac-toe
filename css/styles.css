@@ -1,0 +1,8 @@
+.row > button {
+  width: 100px;
+  height: 100px;
+}
+
+#reset {
+  margin-top: 20px; 
+}
